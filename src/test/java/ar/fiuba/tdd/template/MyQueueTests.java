@@ -36,6 +36,7 @@ public class MyQueueTests {
         assertTrue(queue.isEmpty());
     }
 
+    
     @Test
     public void queueMustNotHaveSizeZeroAfterNewItem() {
         MyQueue<Integer> queue = new MyQueue<Integer>();
