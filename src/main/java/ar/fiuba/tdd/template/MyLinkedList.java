@@ -14,7 +14,7 @@ public class MyLinkedList<T> {
         return head.isNull();
     }
 
-    public void addItem(Object data) {
+    public void addItem(T data) {
         head = head.addToNextNode(data);
     }
 

@@ -36,12 +36,23 @@ public class MyQueueTests {
         assertTrue(queue.isEmpty());
     }
 
-    
+
     @Test
     public void queueMustNotHaveSizeZeroAfterNewItem() {
         MyQueue<Integer> queue = new MyQueue<Integer>();
         queue.add(10);
         assertNotEquals(0, queue.size());
+    }
+
+    @Test
+    public void queueMustHaveRightSize() {
+        MyQueue<Integer> queue = new MyQueue<Integer>();
+        queue.add(10);
+        queue.add(7);
+        queue.add(10);
+        queue.remove();
+        queue.add(15);
+        assertEquals(3, queue.size());
     }
 
     @Test
@@ -66,6 +77,19 @@ public class MyQueueTests {
         queue.add(5);
         queue.remove();
         assertEquals(5, queue.top());
+    }
+
+    @Test
+    public void queueMustReturnInOrderManyItems() {
+        MyQueue<Integer> queue = new MyQueue<Integer>();
+        queue.add(8);
+        queue.add(5);
+        queue.add(25);
+        assertEquals(8, queue.top());
+        queue.remove();
+        assertEquals(5, queue.top());
+        queue.remove();
+        assertEquals(25, queue.top());
     }
 
 }

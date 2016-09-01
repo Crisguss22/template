@@ -11,7 +11,7 @@ public class MyQueue<T> {
         return list.isEmpty();
     }
 
-    public void add(Object data) {
+    public void add(T data) {
         list.addItem(data);
     }
 
